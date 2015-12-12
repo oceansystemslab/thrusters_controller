@@ -1,0 +1,28 @@
+<launch>
+
+    <!-- operating at speeds higher than this leads to difficulties in predicting the current drawn by the thrusters -->
+    <param name="thrusters/throttle_limit" value="85"/>
+
+    <!-- standalone mode -->
+    <node name="thrusters_driver" pkg="thrusters_controller" type="thrusters_node.py" output="screen">
+        <!-- driver configuration -->
+        <!--    protection: stop operations if errors are above the limits (default: true) -->
+        <!--    errors_threshold: maximum allowed errors per thrusters within errors_time (default: 5 errors) -->
+        <!--    errors_time: interval before clearing the error counters (default: 20 sec) -->
+        <param name="protection" value="false" type="boolean"/>
+        <param name="errors_threshold" value="5" type="int"/>
+        <param name="errors_time" value="20" type="int"/>
+
+        <!-- I2C interface configuration -->
+        <!--    i2c_rate: set communication speed (default: 20 kHz) -->
+        <!--    i2c_pullup: use internal pull up resistors (default: False) -->
+        <param name="i2c_rate" value="20" type="int"/>
+        <param name="i2c_pullup" value="true" type="boolean"/>
+
+        <!-- info about node topics -->
+        <!--    this driver uses two standard topics as default options -->
+        <!--    thrusters/commands      for the input commands          -->
+        <!--    thrusters/status        for the output feedback         -->
+    </node>
+
+</launch>

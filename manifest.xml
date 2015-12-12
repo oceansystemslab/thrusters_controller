@@ -1,0 +1,15 @@
+<package>
+  <description brief="thrusters_controller">
+
+     thrusters_controller
+
+  </description>
+  <author>decabyte</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/thrusters_controller</url>
+  <depend package="rospy"/>
+
+  <depend package="vehicle_interface"/>
+
+</package>
